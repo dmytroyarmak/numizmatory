@@ -5,7 +5,3 @@ Numizmatory.addRegions({
   mainRegion: "#main",
   detailsRegion: "#details"
 });
-
-Numizmatory.on("initialize:after", function(options){
-  Backbone.history.start();
-});

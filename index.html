@@ -14,6 +14,7 @@
   <script src="js/game/question/question_view.js"></script>
   <script src="js/game/question/question_view.js"></script>
   <script src="js/game/game_controller.js"></script>
+  <script src="js/game/actions_view.js"></script>
 </head>
 <body>
   <header id="header">
@@ -21,7 +22,11 @@
     <h2>Захвативающая игра для настоящего нумизмата!</h2>
   </header>
   <section id="game">
-    <div id="actions"></div>
+    <div id="actions">
+      <script type="template/text" id="actions-template">
+        <button id="start">START GAME</button>
+      </script>
+    </div>
     <div id="main">
       <script type="template/text" id="question-template">
         <img src="images/questions/<%= image %>" alt="Question <%= id %>">
@@ -59,7 +64,6 @@
         ]
       }
       Numizmatory.start(options);
-      Numizmatory.mainRegion.show(new Numizmatory.QuestionView({ model: Numizmatory.questions.first()}));
     });
   </script>
 </body>

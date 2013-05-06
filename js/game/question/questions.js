@@ -22,6 +22,6 @@ Numizmatory.QuestionsCollection = Backbone.Collection.extend({
     return 100*this.countCorreect()/this.size();
   },
   fetch: function() {
-    this.set(Numizmatory.someQuestionData);
+    this.set(_.shuffle(Numizmatory.someQuestionData));
   }
 });

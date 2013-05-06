@@ -21,6 +21,7 @@ Numizmatory.ActionView = Backbone.Marionette.ItemView.extend({
   },
   onGameFinish: function() {
     this.ui.start.removeAttr("disabled");
+    this.$el.fadeIn();
   }
 });
 

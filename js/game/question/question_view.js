@@ -7,7 +7,7 @@ Numizmatory.QuestionView = Backbone.Marionette.Layout.extend({
     _.bindAll(this, "onVariantSubmited");
   },
   onRender: function() {
-    var variants = new Numizmatory.VariantsCollection(this.model.get('variants'));
+    var variants = new Numizmatory.VariantsCollection(_.shuffle(this.model.get('variants')));
     variants.on("variant:submit", this.onVariantSubmited);
     this.variantsRegion.show(new Numizmatory.VariantsView({ collection: variants }))
   },

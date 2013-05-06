@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Numizmatory - Захвативающая игра для настоящего нумизмата!</title>
+  <script src="js/lib/jquery-2.0.0.js"></script>
+  <script src="js/lib/underscore.js"></script>
+  <script src="js/lib/backbone.js"></script>
+  <script src="js/lib/backbone.marionette.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+  <header id="header">
+    <h1>Numizmatory</h1>
+    <h2>Захвативающая игра для настоящего нумизмата!</h2>
+  </header>
+  <section id="game">
+    <div id="actions"></div>
+    <div id="main"></div>
+    <div id="details"></div>
+  </section>
+  <script>
+    $(function() {
+      options = {
+        questions: [
+        ]
+      }
+      Numizmatory.start(options);
+    });
+  </script>
+</body>
+</html>

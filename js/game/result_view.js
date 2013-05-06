@@ -1,5 +1,6 @@
 Numizmatory.ResultView = Backbone.Marionette.ItemView.extend({
   template: "#result-template",
+  id: "review",
   initialize: function() {
     this.questions = this.options.questions;
   },

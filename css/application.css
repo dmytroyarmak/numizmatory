@@ -1,0 +1,35 @@
+.container {
+  width: 700px;
+}
+#header {
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+#header h1 {
+  font-size: 50px;
+  line-height: 1;
+}
+#actions {
+  text-align: center;;
+}
+#actions .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+#main {
+  text-align: center;
+}
+#variants {
+  margin-top: 10px;
+}
+#variants .btn {
+  width: 300px;
+  margin: 5px;
+}
+#review dl {
+  font-size: 20px;
+}
+#review dl dd {
+  font-size: 30px;
+  line-height: 50px;
+}

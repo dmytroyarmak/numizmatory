@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Numizmatory - Захватывающая игра для настоящего нумизмата!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/application.css" rel="stylesheet">
   <script src="js/lib/jquery-2.0.0.js"></script>
   <script src="js/lib/underscore.js"></script>
   <script src="js/lib/backbone.js"></script>
   <script src="js/lib/backbone.marionette.js"></script>
+  <script src="js/lib/bootstrap.js"></script>
   <script src="js/app.js"></script>
   <script src="js/game/question/variants.js"></script>
   <script src="js/game/question/variant_view.js"></script>
@@ -18,34 +22,35 @@
   <script src="js/game/result_view.js"></script>
 </head>
 <body>
-  <header id="header">
-    <h1>Numizmatory</h1>
-    <h2>Захватывающая игра для настоящего нумизмата!</h2>
-  </header>
-  <section>
-    <div id="actions"></div>
+  <div class="container">
+    <header id="header">
+      <h1>Numizmatory</h1>
+      <p class="lead">Захватывающая игра для настоящего нумизмата!</p>
+      <hr>
+      <div id="actions"></div>
+    </header>
     <div id="main"></div>
-  </section>
+  </div>
   <!-- Temlates -->
   <script type="template/text" id="actions-template">
-    <button id="start">START GAME</button>
+    <button id="start" class="btn btn-success">START GAME</button>
   </script>
 
   <script type="template/text" id="question-template">
-    <img src="images/questions/<%= image %>" alt="Question <%= id %>">
+    <img src="img/questions/<%= image %>" alt="Question <%= id %>" class="img-polaroid">
     <div id="variants"></div>
   </script>
 
   <script type="template/text" id="result-template">
     <dl>
-      <dt>Questions: </dt>
+      <dt>Questions</dt>
       <dd><%= questions %></dd>
-      <dt>Correct: </dt>
-      <dd><%= correct %></dd>
-      <dt>Incorrect: </dt>
-      <dd><%= incorrect %></dd>
-      <dt>Score: </dt>
-      <dd><%= score %>%</dd>
+      <dt>Correct</dt>
+      <dd class="text-success"><%= correct %></dd>
+      <dt>Incorrect</dt>
+      <dd class="text-error"><%= incorrect %></dd>
+      <dt>Score</dt>
+      <dd class="text-info"><%= score %>%</dd>
     </dl>
   </script>
   <!-- Start Application -->
@@ -56,10 +61,10 @@
           id: 1,
           image: "cypr_5m_1956_1.jpg",
           variants: [
-            { id: 1, name: "Индия 5 рупий 2006"},
-            { id: 2, name: "Кипр 5 милс 1956"},
-            { id: 3, name: "Индия 5 пайса 1977"},
-            { id: 4, name: "Индонезия 5 рупий 1974"}
+            { id: 1, name: "Индия 5 рупий"},
+            { id: 2, name: "Кипр 5 милс"},
+            { id: 3, name: "Индия 5 пайса"},
+            { id: 4, name: "Индонезия 5 рупий"}
           ],
           right_answer: 2
         },
@@ -67,10 +72,10 @@
           id: 2,
           image: "ind5p1977_1.jpg",
           variants: [
-            { id: 1, name: "Кипр 5 милс 1956"},
-            { id: 2, name: "Индонезия 5 рупий 1974"},
-            { id: 3, name: "Индия 5 рупий 2006"},
-            { id: 4, name: "Индия 5 пайса 1977"}
+            { id: 1, name: "Кипр 5 милс"},
+            { id: 2, name: "Индонезия 5 рупий"},
+            { id: 3, name: "Индия 5 рупий"},
+            { id: 4, name: "Индия 5 пайса"}
           ],
           right_answer: 4
         },
@@ -78,10 +83,10 @@
           id: 3,
           image: "large_dan_10k_06_and_kor_1_1.jpg",
           variants: [
-            { id: 1, name: "Люксембург 10 сентим 1901"},
-            { id: 2, name: "Дания 10 крон 2006"},
-            { id: 3, name: "Ватикан 10 чентезимо 1935"},
-            { id: 4, name: "Парагвай 10 сентаво 1903"}
+            { id: 1, name: "Люксембург 10 сентим"},
+            { id: 2, name: "Дания 10 крон"},
+            { id: 3, name: "Ватикан 10 чентезимо"},
+            { id: 4, name: "Парагвай 10 сентаво"}
           ],
           right_answer: 2
         },
@@ -89,10 +94,10 @@
           id: 4,
           image: "par_10_cent_1903_1_1.jpg",
           variants: [
-            { id: 1, name: "Парагвай 10 сентаво 1903"},
-            { id: 2, name: "Ватикан 10 чентезимо 1935"},
-            { id: 3, name: "Люксембург 10 сентим 1901"},
-            { id: 4, name: "Дания 10 крон 2006"}
+            { id: 1, name: "Парагвай 10 сентаво"},
+            { id: 2, name: "Ватикан 10 чентезимо"},
+            { id: 3, name: "Люксембург 10 сентим"},
+            { id: 4, name: "Дания 10 крон"}
           ],
           right_answer: 1
         },
@@ -100,10 +105,10 @@
           id: 5,
           image: "indo5rup1974_1_1.jpg",
           variants: [
-            { id: 1, name: "Кипр 5 милс 1956"},
-            { id: 2, name: "Индия 5 рупий 2006"},
-            { id: 3, name: "Индонезия 5 рупий 1974"},
-            { id: 4, name: "Индия 5 пайса 1977"}
+            { id: 1, name: "Кипр 5 милс"},
+            { id: 2, name: "Индия 5 рупий"},
+            { id: 3, name: "Индонезия 5 рупий"},
+            { id: 4, name: "Индия 5 пайса"}
           ],
           right_answer: 3
         },
@@ -111,10 +116,10 @@
           id: 6,
           image: "india_5_rupees_2006_p14-2_1.jpg",
           variants: [
-            { id: 1, name: "Кипр 5 милс 1956"},
-            { id: 2, name: "Коста-Рика 5 колон 1975"},
-            { id: 3, name: "Индия 5 рупий 2006"},
-            { id: 4, name: "Индия 5 пайса 1977"}
+            { id: 1, name: "Кипр 5 милс"},
+            { id: 2, name: "Коста-Рика 5 колон"},
+            { id: 3, name: "Индия 5 рупий"},
+            { id: 4, name: "Индия 5 пайса"}
           ],
           right_answer: 3
         },
@@ -122,10 +127,10 @@
           id: 7,
           image: "luxembourg_10_centimes_1901_p25_1.jpg",
           variants: [
-            { id: 1, name: "Парагвай 10 сентаво 1903"},
-            { id: 2, name: "Люксембург 10 сентим 1901"},
-            { id: 3, name: "Ватикан 10 чентезимо 1935"},
-            { id: 4, name: "Никарагуа 10 сентаво 1974"}
+            { id: 1, name: "Парагвай 10 сентаво"},
+            { id: 2, name: "Люксембург 10 сентим"},
+            { id: 3, name: "Ватикан 10 чентезимо"},
+            { id: 4, name: "Никарагуа 10 сентаво"}
           ],
           right_answer: 2
         },
@@ -133,10 +138,10 @@
           id: 8,
           image: "vaticano_10_centesimi_1935_p04_1.jpg",
           variants: [
-            { id: 1, name: "Люксембург 10 сентим 1901"},
-            { id: 2, name: "Никарагуа 10 сентаво 1974"},
-            { id: 3, name: "Дания 10 крон 2006"},
-            { id: 4, name: "Ватикан 10 чентезимо 1935"}
+            { id: 1, name: "Люксембург 10 сентим"},
+            { id: 2, name: "Никарагуа 10 сентаво"},
+            { id: 3, name: "Дания 10 крон"},
+            { id: 4, name: "Ватикан 10 чентезимо"}
           ],
           right_answer: 4
         },
@@ -144,10 +149,10 @@
           id: 9,
           image: "nicaragua_10_centavos_1974_p26_1_1.jpg",
           variants: [
-            { id: 1, name: "Парагвай 10 сентаво 1903"},
-            { id: 2, name: "Никарагуа 10 сентаво 1974"},
-            { id: 3, name: "Люксембург 10 сентим 1901"},
-            { id: 4, name: "Дания 10 крон 2006"}
+            { id: 1, name: "Парагвай 10 сентаво"},
+            { id: 2, name: "Никарагуа 10 сентаво"},
+            { id: 3, name: "Люксембург 10 сентим"},
+            { id: 4, name: "Дания 10 крон"}
           ],
           right_answer: 2
         },
@@ -155,10 +160,10 @@
           id: 10,
           image: "costa_rica_5_colones_1975_p25-4_1.jpg",
           variants: [
-            { id: 1, name: "Кипр 5 милс 1956"},
-            { id: 2, name: "Коста-Рика 5 колон 1975"},
-            { id: 3, name: "Индия 5 рупий 2006"},
-            { id: 4, name: "Индия 5 пайса 1977"}
+            { id: 1, name: "Кипр 5 милс"},
+            { id: 2, name: "Коста-Рика 5 колон"},
+            { id: 3, name: "Индия 5 рупий"},
+            { id: 4, name: "Индия 5 пайса"}
           ],
           right_answer: 2
         }
